@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cumple de Fran y Guido · Sábado 5/12</title>
+  <meta name="description" content="Pool party en Montecarlo, Party Bus y boliche. Anotate acá.">
+  <meta property="og:title" content="Cumpleaños de Fran y Guido 🎉">
+  <meta property="og:description" content="Sábado 5/12 desde las 11 · Barrio Montecarlo, Del Viso. Pool party, Party Bus y boliche. ¡Anotate!">
+  <meta property="og:image" content="https://chechdebug.github.io/cumple-fran-guido/img/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FF6A1A">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <div class="marco">
+
+    <!-- PORTADA -->
+    <header class="portada">
+      <span class="barra barra-izq" aria-hidden="true"></span>
+      <span class="deco-rombos" aria-hidden="true"><i class="rombo hueco"></i><i class="punto"></i><i class="rombo"></i></span>
+
+      <div class="portada-texto">
+        <p class="sobretitulo">Cumpleaños de Fran y Guido</p>
+        <p class="vamos">¡Vamos a festejar!</p>
+        <h1 class="fecha">Sábado <span class="naranja">5</span></h1>
+        <p class="hora">Desde las 11:00 AM</p>
+        <p class="lugar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Barrio Montecarlo, Del Viso
+        </p>
+        <p class="bajada">Pasamos el día pool party y a la noche salimos. Party Bus desde Pilar + boliche en CABA.</p>
+        <a class="boton" href="#anotate">Me anoto</a>
+      </div>
+
+      <div class="portada-foto">
+        <img src="img/fran-guido.webp" alt="Ilustración de Fran y Guido" width="1514" height="1039">
+      </div>
+    </header>
+
+    <!-- EL PLAN -->
+    <section class="seccion" id="plan">
+      <h2>El plan</h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="emoji" aria-hidden="true">☀️</span>
+          <h3>Pool party</h3>
+          <p>Todo el día en Montecarlo, desde las 11. Traé lo que vas a tomar y traje de baño.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="emoji" aria-hidden="true">🚌</span>
+          <h3>Party Bus</h3>
+          <p>A la noche salimos en Party Bus desde Pilar. Buscá el colectivo que dice <b>PARTY BUS</b>.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="emoji" aria-hidden="true">🪩</span>
+          <h3>Boliche</h3>
+          <p>Terminamos en un boliche en CABA <span class="etiqueta">a confirmar</span></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CÓMO LLEGAR + QUÉ LLEVAR -->
+    <section class="seccion dos-col">
+      <div>
+        <h2>Cómo llegar</h2>
+        <p>Barrio Montecarlo, Del Viso (Pilar). La parada de colectivo está en la puerta del barrio: <b>líneas 57 y 203</b>.</p>
+        <a class="boton boton-secundario" href="https://www.google.com/maps/search/?api=1&query=-34.43194,-58.81306" target="_blank" rel="noopener">Abrir en Google Maps</a>
+      </div>
+      <div>
+        <h2>Qué llevar</h2>
+        <ul class="lista">
+          <li>🍺 Lo que vas a tomar (birra, fernet, etc.)</li>
+          <li>🩱 Traje de baño</li>
+          <li>👕 Muda de ropa para la noche</li>
+        </ul>
+        <p class="nota">Si no vas en el Party Bus: a la tarde/noche cada uno se vuelve y nos juntamos para previar e ir al boliche.</p>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="seccion formulario" id="anotate">
+      <span class="triangulos" aria-hidden="true">▲<br>▲<br>▲</span>
+      <h2>Anotate</h2>
+      <p>Completá tus datos. Si venís con alguien, sumalo con <b>+ Agregar otro invitado</b>.</p>
+
+      <form id="form" novalidate>
+        <div id="invitados"></div>
+
+        <button type="button" class="boton-agregar" id="agregar">+ Agregar otro invitado</button>
+
+        <label class="campo">
+          <span>Comentario (opcional)</span>
+          <textarea name="comentario" rows="3" maxlength="500" placeholder="¿Algo que quieras avisar?"></textarea>
+        </label>
+
+        <p class="error" id="error" role="alert" hidden></p>
+        <button type="submit" class="boton boton-enviar" id="enviar">Confirmar</button>
+      </form>
+
+      <div class="listo" id="listo" hidden>
+        <p class="listo-titulo">¡Listo, te esperamos!</p>
+        <p id="listo-nombres"></p>
+        <button type="button" class="boton boton-secundario" id="otra">Anotar a alguien más</button>
+      </div>
+    </section>
+
+    <footer class="pie">
+      <p>¡No faltes!</p>
+      <span class="barra barra-der" aria-hidden="true"></span>
+    </footer>
+  </div>
+
+  <template id="tpl-invitado">
+    <fieldset class="invitado">
+      <legend>Invitado <span class="num"></span></legend>
+      <button type="button" class="quitar" aria-label="Quitar invitado">✕</button>
+      <label class="campo">
+        <span>Nombre y apellido *</span>
+        <input type="text" name="nombre" autocomplete="name" maxlength="80" required>
+      </label>
+      <label class="campo">
+        <span>WhatsApp</span>
+        <input type="tel" name="whatsapp" autocomplete="tel" inputmode="tel" maxlength="30" placeholder="11 2345 6789">
+      </label>
+      <div class="actividades">
+        <span>¿A qué vas?</span>
+        <label class="chip"><input type="checkbox" name="pool" checked> ☀️ Pool party</label>
+        <label class="chip"><input type="checkbox" name="bus" checked> 🚌 Party Bus</label>
+        <label class="chip"><input type="checkbox" name="boliche" checked> 🪩 Boliche</label>
+      </div>
+    </fieldset>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
